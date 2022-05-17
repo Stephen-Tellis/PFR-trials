@@ -1,0 +1,4 @@
+subscriber_topic: /scan
+queue_size: 1
+K_p_angular: 5
+K_p_linear: 0.5
