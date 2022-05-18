@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   sensor_msgs
   geometry_msgs
+  visualization_msgs
 )
 
 ###################################
@@ -21,6 +22,7 @@ catkin_package(
     roscpp
     sensor_msgs
     geometry_msgs
+    visualization_msgs
 )
 
 ###########

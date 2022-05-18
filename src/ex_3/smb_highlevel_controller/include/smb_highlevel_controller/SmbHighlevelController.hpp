@@ -5,6 +5,7 @@
 // msgs
 #include <sensor_msgs/LaserScan.h>
 #include <geometry_msgs/Twist.h>
+#include <visualization_msgs/Marker.h>
 
 // STD
 #include <string>
@@ -41,6 +42,7 @@ private:
 	double angle_inc_;
 	bool alternate_ = true;
 	ros::Publisher publisher_;
+	ros::Publisher publisher_marker_;
 };
 
 } /* namespace */
