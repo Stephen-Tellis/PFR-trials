@@ -1,0 +1,17 @@
+<launch>
+
+  <!-- Launch environment -->
+  <include file="$(find smb_gazebo)/launch/smb_gazebo.launch">
+    <arg name="laser_enabled" value="True"/>
+    <arg name="world_file" default="$(find smb_gazebo)/worlds/singlePillar.world"/>
+  </include>
+
+  <!-- Launch highlevel controller -->
+  <node pkg="smb_highlevel_controller" type="smb_highlevel_controller" name="smb_highlevel_controller" output="screen">
+    <rosparam command="load" file="$(find smb_highlevel_controller)/config/param_config.yaml" />
+  </node>
+
+  <!-- Sensor visualization -->
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find smb_highlevel_controller)/config/rvizconfig.rviz" />
+
+</launch>

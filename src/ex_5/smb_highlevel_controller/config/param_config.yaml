@@ -1,0 +1,5 @@
+subscriber_topic: /scan
+queue_size: 1
+K_p_angular: 6
+K_p_linear: 0.75
+service_name: "estop"
