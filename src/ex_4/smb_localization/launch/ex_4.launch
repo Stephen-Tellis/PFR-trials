@@ -12,7 +12,7 @@
     <arg name="/use_sim_time" default="true"/>
   </node>
 
-  <!-- Load controller configuration -->
+  <!-- Load controller configuratioon -->
   <rosparam command="load" file="$(find smb_control)/config/control.yaml" />
 
   <!-- Spawn controllers -->

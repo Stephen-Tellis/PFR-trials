@@ -2,8 +2,8 @@
 
 #include <smb_highlevel_controller/SmbHighlevelController.hpp>
 
-// DISCLAIMER: This is a VERY bad implementation. Do not use this.
-// Only done so because time of completion was the only counting factor.
+// DISCLAIMER: This is a VERY bad implementation. Do not use this in projects.
+// Only done so because time was of essence.
 
 namespace smb_highlevel_controller {
 
@@ -33,6 +33,7 @@ bool SmbHighlevelController::estop_cb(std_srvs::SetBool::Request &req,
 {
   ROS_INFO_STREAM("Received E-stop Command");
   bool retval = SmbHighlevelController::estop_trigger(req.data);
+  resp.success = retval;
   return retval;
 }
 
@@ -97,7 +98,7 @@ void SmbHighlevelController::topicCallback(const sensor_msgs::LaserScan& message
     msg.linear.x = minVal * pgain_linear_;
     alternate_ = true;
     }
-    // ROS_INFO_STREAM("Sending command: " << "linear=" << msg.linear.x << " angular=" << msg.angular.z);
+    //ROS_INFO_STREAM("Sending command: " << "linear=" << msg.linear.x << " angular=" << msg.angular.z);
     cmdvel_publisher_.publish(msg);
 
     // Visualization marker

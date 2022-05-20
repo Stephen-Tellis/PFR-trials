@@ -11,6 +11,9 @@
     <rosparam command="load" file="$(find smb_highlevel_controller)/config/param_config.yaml" />
   </node>
 
+  <!-- Collision Avoidance -->
+  <!-- <node pkg="collision_avoidance" type="collision_avoidance" name="collision_avoidance" output="screen" /> -->
+
   <!-- Sensor visualization -->
   <node type="rviz" name="rviz" pkg="rviz" args="-d $(find smb_highlevel_controller)/config/rvizconfig.rviz" />
 
